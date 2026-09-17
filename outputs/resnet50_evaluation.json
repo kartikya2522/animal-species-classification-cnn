@@ -1,0 +1,17 @@
+{
+  "model": "resnet50",
+  "checkpoint_epoch": 1,
+  "checkpoint_val_acc": 0.875,
+  "test_samples": 7576,
+  "num_classes": 80,
+  "test_top1_accuracy": 0.799234,
+  "macro_precision": 0.737072,
+  "macro_recall": 0.745311,
+  "macro_f1": 0.720853,
+  "macro_roc_auc": 0.992872,
+  "figures": {
+    "confusion_matrix": "/Users/sameerkadam/Downloads/Projects/animal-species-classification-cnn/outputs/figures/resnet50_confusion_matrix.png",
+    "roc_auc": "/Users/sameerkadam/Downloads/Projects/animal-species-classification-cnn/outputs/figures/resnet50_roc_auc.png",
+    "training_curves": "/Users/sameerkadam/Downloads/Projects/animal-species-classification-cnn/outputs/figures/resnet50_training_curves.png"
+  }
+}

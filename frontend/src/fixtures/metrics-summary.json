@@ -1,0 +1,37 @@
+{
+ "_note": "Summary rows from GET /api/metrics (Phase 3 fixture).",
+ "models": [
+  {
+   "id": "convnext_tiny",
+   "name": "ConvNeXt-Tiny",
+   "accuracy": 0.8152059134107709,
+   "top5": null,
+   "macro_f1": null,
+   "params": 27881648
+  },
+  {
+   "id": "efficientnetv2_s",
+   "name": "EfficientNetV2-S",
+   "accuracy": 0.8321,
+   "top5": null,
+   "macro_f1": 0.769,
+   "params": 20279968
+  },
+  {
+   "id": "resnet50",
+   "name": "ResNet50",
+   "accuracy": 0.7992344244984161,
+   "top5": 0.9730728616684267,
+   "macro_f1": 0.720853,
+   "params": 23671952
+  },
+  {
+   "id": "swin_tiny",
+   "name": "Swin-Tiny",
+   "accuracy": 0.7961,
+   "top5": null,
+   "macro_f1": 0.7227,
+   "params": 27580874
+  }
+ ]
+}

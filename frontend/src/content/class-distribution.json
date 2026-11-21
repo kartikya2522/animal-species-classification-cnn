@@ -1,0 +1,574 @@
+{
+  "_source": "data/manifest.csv via frontend/scripts/make_class_distribution.mjs",
+  "_note": "Crops per class. train = original training crops after the stratified train/val split; augmented = extra rare-class copies added to train; val/test = untouched.",
+  "totals": {
+    "train": 23982,
+    "augmented": 2326,
+    "val": 4232,
+    "test": 7576,
+    "classes": 80,
+    "rows": 38116
+  },
+  "classes": [
+    {
+      "label": "Butterfly",
+      "train": 2333,
+      "augmented": 0,
+      "val": 412,
+      "test": 185
+    },
+    {
+      "label": "Fish",
+      "train": 1407,
+      "augmented": 0,
+      "val": 248,
+      "test": 872
+    },
+    {
+      "label": "Penguin",
+      "train": 1363,
+      "augmented": 0,
+      "val": 240,
+      "test": 79
+    },
+    {
+      "label": "Moths and butterflies",
+      "train": 1245,
+      "augmented": 0,
+      "val": 220,
+      "test": 29
+    },
+    {
+      "label": "Lizard",
+      "train": 1060,
+      "augmented": 0,
+      "val": 187,
+      "test": 267
+    },
+    {
+      "label": "Duck",
+      "train": 887,
+      "augmented": 0,
+      "val": 157,
+      "test": 105
+    },
+    {
+      "label": "Spider",
+      "train": 780,
+      "augmented": 0,
+      "val": 138,
+      "test": 213
+    },
+    {
+      "label": "Monkey",
+      "train": 722,
+      "augmented": 0,
+      "val": 127,
+      "test": 365
+    },
+    {
+      "label": "Jellyfish",
+      "train": 665,
+      "augmented": 0,
+      "val": 117,
+      "test": 109
+    },
+    {
+      "label": "Eagle",
+      "train": 647,
+      "augmented": 0,
+      "val": 114,
+      "test": 190
+    },
+    {
+      "label": "Frog",
+      "train": 509,
+      "augmented": 0,
+      "val": 90,
+      "test": 79
+    },
+    {
+      "label": "Parrot",
+      "train": 503,
+      "augmented": 0,
+      "val": 89,
+      "test": 203
+    },
+    {
+      "label": "Snake",
+      "train": 491,
+      "augmented": 0,
+      "val": 87,
+      "test": 219
+    },
+    {
+      "label": "Sparrow",
+      "train": 450,
+      "augmented": 0,
+      "val": 79,
+      "test": 138
+    },
+    {
+      "label": "Caterpillar",
+      "train": 445,
+      "augmented": 0,
+      "val": 79,
+      "test": 72
+    },
+    {
+      "label": "Horse",
+      "train": 423,
+      "augmented": 0,
+      "val": 75,
+      "test": 165
+    },
+    {
+      "label": "Chicken",
+      "train": 375,
+      "augmented": 0,
+      "val": 66,
+      "test": 166
+    },
+    {
+      "label": "Tortoise",
+      "train": 371,
+      "augmented": 0,
+      "val": 66,
+      "test": 123
+    },
+    {
+      "label": "Deer",
+      "train": 365,
+      "augmented": 0,
+      "val": 64,
+      "test": 235
+    },
+    {
+      "label": "Owl",
+      "train": 358,
+      "augmented": 0,
+      "val": 63,
+      "test": 70
+    },
+    {
+      "label": "Ladybug",
+      "train": 351,
+      "augmented": 0,
+      "val": 62,
+      "test": 40
+    },
+    {
+      "label": "Goose",
+      "train": 343,
+      "augmented": 0,
+      "val": 60,
+      "test": 42
+    },
+    {
+      "label": "Snail",
+      "train": 339,
+      "augmented": 0,
+      "val": 60,
+      "test": 120
+    },
+    {
+      "label": "Squirrel",
+      "train": 314,
+      "augmented": 0,
+      "val": 55,
+      "test": 70
+    },
+    {
+      "label": "Shark",
+      "train": 307,
+      "augmented": 0,
+      "val": 54,
+      "test": 61
+    },
+    {
+      "label": "Crab",
+      "train": 287,
+      "augmented": 0,
+      "val": 51,
+      "test": 120
+    },
+    {
+      "label": "Tiger",
+      "train": 286,
+      "augmented": 0,
+      "val": 51,
+      "test": 27
+    },
+    {
+      "label": "Whale",
+      "train": 285,
+      "augmented": 0,
+      "val": 50,
+      "test": 61
+    },
+    {
+      "label": "Giraffe",
+      "train": 284,
+      "augmented": 0,
+      "val": 50,
+      "test": 31
+    },
+    {
+      "label": "Swan",
+      "train": 244,
+      "augmented": 0,
+      "val": 43,
+      "test": 79
+    },
+    {
+      "label": "Starfish",
+      "train": 231,
+      "augmented": 0,
+      "val": 41,
+      "test": 63
+    },
+    {
+      "label": "Sea turtle",
+      "train": 230,
+      "augmented": 0,
+      "val": 41,
+      "test": 104
+    },
+    {
+      "label": "Harbor seal",
+      "train": 228,
+      "augmented": 0,
+      "val": 40,
+      "test": 68
+    },
+    {
+      "label": "Polar bear",
+      "train": 213,
+      "augmented": 0,
+      "val": 38,
+      "test": 57
+    },
+    {
+      "label": "Rhinoceros",
+      "train": 212,
+      "augmented": 0,
+      "val": 38,
+      "test": 46
+    },
+    {
+      "label": "Pig",
+      "train": 199,
+      "augmented": 0,
+      "val": 35,
+      "test": 128
+    },
+    {
+      "label": "Goat",
+      "train": 193,
+      "augmented": 0,
+      "val": 34,
+      "test": 108
+    },
+    {
+      "label": "Zebra",
+      "train": 192,
+      "augmented": 0,
+      "val": 34,
+      "test": 42
+    },
+    {
+      "label": "Rabbit",
+      "train": 190,
+      "augmented": 0,
+      "val": 34,
+      "test": 136
+    },
+    {
+      "label": "Lion",
+      "train": 182,
+      "augmented": 0,
+      "val": 32,
+      "test": 104
+    },
+    {
+      "label": "Sea lion",
+      "train": 177,
+      "augmented": 0,
+      "val": 31,
+      "test": 55
+    },
+    {
+      "label": "Centipede",
+      "train": 170,
+      "augmented": 0,
+      "val": 30,
+      "test": 55
+    },
+    {
+      "label": "Woodpecker",
+      "train": 150,
+      "augmented": 0,
+      "val": 26,
+      "test": 35
+    },
+    {
+      "label": "Elephant",
+      "train": 147,
+      "augmented": 0,
+      "val": 26,
+      "test": 39
+    },
+    {
+      "label": "Goldfish",
+      "train": 136,
+      "augmented": 0,
+      "val": 24,
+      "test": 84
+    },
+    {
+      "label": "Worm",
+      "train": 131,
+      "augmented": 0,
+      "val": 23,
+      "test": 18
+    },
+    {
+      "label": "Mouse",
+      "train": 130,
+      "augmented": 0,
+      "val": 23,
+      "test": 86
+    },
+    {
+      "label": "Fox",
+      "train": 128,
+      "augmented": 0,
+      "val": 22,
+      "test": 72
+    },
+    {
+      "label": "Ostrich",
+      "train": 127,
+      "augmented": 0,
+      "val": 22,
+      "test": 94
+    },
+    {
+      "label": "Sheep",
+      "train": 124,
+      "augmented": 0,
+      "val": 22,
+      "test": 97
+    },
+    {
+      "label": "Cheetah",
+      "train": 116,
+      "augmented": 0,
+      "val": 20,
+      "test": 39
+    },
+    {
+      "label": "Canary",
+      "train": 108,
+      "augmented": 0,
+      "val": 19,
+      "test": 18
+    },
+    {
+      "label": "Leopard",
+      "train": 105,
+      "augmented": 0,
+      "val": 18,
+      "test": 61
+    },
+    {
+      "label": "Brown bear",
+      "train": 97,
+      "augmented": 53,
+      "val": 17,
+      "test": 44
+    },
+    {
+      "label": "Crocodile",
+      "train": 96,
+      "augmented": 54,
+      "val": 17,
+      "test": 81
+    },
+    {
+      "label": "Kangaroo",
+      "train": 93,
+      "augmented": 57,
+      "val": 16,
+      "test": 51
+    },
+    {
+      "label": "Raccoon",
+      "train": 91,
+      "augmented": 59,
+      "val": 16,
+      "test": 59
+    },
+    {
+      "label": "Turkey",
+      "train": 88,
+      "augmented": 62,
+      "val": 15,
+      "test": 53
+    },
+    {
+      "label": "Jaguar",
+      "train": 86,
+      "augmented": 64,
+      "val": 15,
+      "test": 42
+    },
+    {
+      "label": "Bear",
+      "train": 81,
+      "augmented": 69,
+      "val": 14,
+      "test": 42
+    },
+    {
+      "label": "Panda",
+      "train": 81,
+      "augmented": 69,
+      "val": 14,
+      "test": 19
+    },
+    {
+      "label": "Hippopotamus",
+      "train": 76,
+      "augmented": 74,
+      "val": 14,
+      "test": 33
+    },
+    {
+      "label": "Tick",
+      "train": 75,
+      "augmented": 75,
+      "val": 13,
+      "test": 1
+    },
+    {
+      "label": "Scorpion",
+      "train": 73,
+      "augmented": 77,
+      "val": 13,
+      "test": 44
+    },
+    {
+      "label": "Camel",
+      "train": 72,
+      "augmented": 78,
+      "val": 13,
+      "test": 38
+    },
+    {
+      "label": "Hedgehog",
+      "train": 71,
+      "augmented": 79,
+      "val": 12,
+      "test": 52
+    },
+    {
+      "label": "Lynx",
+      "train": 69,
+      "augmented": 81,
+      "val": 12,
+      "test": 34
+    },
+    {
+      "label": "Mule",
+      "train": 67,
+      "augmented": 83,
+      "val": 12,
+      "test": 42
+    },
+    {
+      "label": "Otter",
+      "train": 67,
+      "augmented": 83,
+      "val": 12,
+      "test": 66
+    },
+    {
+      "label": "Cattle",
+      "train": 65,
+      "augmented": 85,
+      "val": 12,
+      "test": 209
+    },
+    {
+      "label": "Magpie",
+      "train": 57,
+      "augmented": 93,
+      "val": 10,
+      "test": 34
+    },
+    {
+      "label": "Raven",
+      "train": 57,
+      "augmented": 93,
+      "val": 10,
+      "test": 98
+    },
+    {
+      "label": "Hamster",
+      "train": 55,
+      "augmented": 95,
+      "val": 10,
+      "test": 75
+    },
+    {
+      "label": "Koala",
+      "train": 48,
+      "augmented": 102,
+      "val": 9,
+      "test": 26
+    },
+    {
+      "label": "Red panda",
+      "train": 44,
+      "augmented": 106,
+      "val": 8,
+      "test": 44
+    },
+    {
+      "label": "Bull",
+      "train": 40,
+      "augmented": 110,
+      "val": 7,
+      "test": 91
+    },
+    {
+      "label": "Shrimp",
+      "train": 34,
+      "augmented": 116,
+      "val": 6,
+      "test": 95
+    },
+    {
+      "label": "Turtle",
+      "train": 22,
+      "augmented": 128,
+      "val": 4,
+      "test": 7
+    },
+    {
+      "label": "Squid",
+      "train": 14,
+      "augmented": 136,
+      "val": 2,
+      "test": 13
+    },
+    {
+      "label": "Seahorse",
+      "train": 5,
+      "augmented": 145,
+      "val": 2,
+      "test": 39
+    }
+  ]
+}

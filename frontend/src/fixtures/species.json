@@ -1,0 +1,324 @@
+{
+ "_note": "Subset of data/species_kb.json for the /__ui preview (Phase 3). Images: Wikimedia Commons, credited per entry.",
+ "species": [
+  {
+   "number": 55,
+   "slug": "red-panda",
+   "label": "Red panda",
+   "common_name": "Red panda",
+   "scientific_name": "Ailurus fulgens",
+   "rank": "species",
+   "is_group": false,
+   "animal_group": "Mammal",
+   "summary": "The red panda, also known as the lesser panda, is a small mammal native to the eastern Himalayas and southwestern China. It has dense reddish-brown fur with a black belly and legs, white-lined ears, a mostly white muzzle and a ringed tail. Its head-to-body length is 51–63.5 cm (20.1–25.0 in) with a 28–48.5 cm (11.0–19.1 in) tail, and it weighs between 3.2 and 15 kg. It is well adapted to climbing due to its flexible joints and curved semi-retractile claws.",
+   "iucn_status": {
+    "code": "EN",
+    "label": "Endangered",
+    "source": "IUCN Red List via Wikidata (P141)",
+    "source_url": "https://www.wikidata.org/wiki/Q41960"
+   },
+   "iucn_code": "EN",
+   "iucn_label": "Endangered",
+   "model_accuracy": 0.977273,
+   "test_images": 44,
+   "inaturalist_observations": 2337,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Red_Panda_%2824986761703%29.jpg",
+    "width": 3900,
+    "height": 2583,
+    "artist": "Mathias Appel",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Red_Panda_(24986761703).jpg",
+    "provider": "Wikimedia Commons"
+   }
+  },
+  {
+   "number": 73,
+   "slug": "tiger",
+   "label": "Tiger",
+   "common_name": "Tiger",
+   "scientific_name": "Panthera tigris",
+   "rank": "species",
+   "is_group": false,
+   "animal_group": "Mammal",
+   "summary": "The tiger is a large cat and a member of the genus Panthera native to Asia. It has a powerful, muscular body with a large head and paws, a long tail and orange fur that fades to white in parts, with black, mostly vertical stripes. It is traditionally classified into nine subspecies, though some recognise only two subspecies, the mainland Asian tiger and the Sunda Islands tiger.",
+   "iucn_status": {
+    "code": "EN",
+    "label": "Endangered",
+    "source": "IUCN Red List via Wikidata (P141)",
+    "source_url": "https://www.wikidata.org/wiki/Q19939"
+   },
+   "iucn_code": "EN",
+   "iucn_label": "Endangered",
+   "model_accuracy": 0.888889,
+   "test_images": 27,
+   "inaturalist_observations": 9360,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Bengal_tiger_%28Panthera_tigris_tigris%29_female_3_crop.jpg",
+    "width": 4500,
+    "height": 3000,
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bengal_tiger_(Panthera_tigris_tigris)_female_3_crop.jpg",
+    "provider": "Wikimedia Commons"
+   }
+  },
+  {
+   "number": 36,
+   "slug": "lion",
+   "label": "Lion",
+   "common_name": "Lion",
+   "scientific_name": "Panthera leo",
+   "rank": "species",
+   "is_group": false,
+   "animal_group": "Mammal",
+   "summary": "The lion is a large cat of the genus Panthera, currently ranging only in sub-Saharan Africa and India. It has a muscular, broad-chested body; a short, rounded head; round ears; and a dark, hairy tuft at the tip of its tail. It is sexually dimorphic; adult male lions are larger than females and have a prominent mane that extends from the head to the shoulders and chest.",
+   "iucn_status": {
+    "code": "VU",
+    "label": "Vulnerable",
+    "source": "IUCN Red List via Wikidata (P141)",
+    "source_url": "https://www.wikidata.org/wiki/Q140"
+   },
+   "iucn_code": "VU",
+   "iucn_label": "Vulnerable",
+   "model_accuracy": 0.980769,
+   "test_images": 104,
+   "inaturalist_observations": 26212,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg",
+    "width": 5168,
+    "height": 3448,
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg",
+    "provider": "Wikimedia Commons"
+   }
+  },
+  {
+   "number": 51,
+   "slug": "polar-bear",
+   "label": "Polar bear",
+   "common_name": "Polar bear",
+   "scientific_name": "Ursus maritimus",
+   "rank": "species",
+   "is_group": false,
+   "animal_group": "Mammal",
+   "summary": "The polar bear is a large bear native to the Arctic and nearby areas. It is closely related to the brown bear, and the two species can interbreed. The polar bear is the largest extant species of bear and land carnivore by body mass, with adult males weighing 300–800 kg (660–1,760 lb). The species is sexually dimorphic, as adult females are much smaller. The polar bear is white or yellowish-furred with black skin and a thick layer of fat. It is more slender than the brown bear, with a narrower skull, longer neck and lower shoulder hump. Its teeth are sharper and more adapted to cutting meat. The paws are large and allow the bear to walk on ice and paddle in the water.",
+   "iucn_status": {
+    "code": "VU",
+    "label": "Vulnerable",
+    "source": "IUCN Red List via Wikidata (P141)",
+    "source_url": "https://www.wikidata.org/wiki/Q33609"
+   },
+   "iucn_code": "VU",
+   "iucn_label": "Vulnerable",
+   "model_accuracy": 0.964912,
+   "test_images": 57,
+   "inaturalist_observations": 4310,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg",
+    "width": 563,
+    "height": 565,
+    "artist": "Alan Wilson",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Polar_Bear_-_Alaska_(cropped).jpg",
+    "provider": "Wikimedia Commons"
+   }
+  },
+  {
+   "number": 10,
+   "slug": "cheetah",
+   "label": "Cheetah",
+   "common_name": "Cheetah",
+   "scientific_name": "Acinonyx jubatus",
+   "rank": "species",
+   "is_group": false,
+   "animal_group": "Mammal",
+   "summary": "The cheetah is a species of large feline and the only living member of the genus Acinonyx. The cheetah is a pursuit predator and the fastest land animal, capable of running at 93–104 km/h (58–65 mph); it has evolved for speed, having powerful hindlimb muscles and a long lumbar spine. The cheetah has a tawny to creamy white or pale buff fur that is marked with evenly spaced, solid black spots. The head is small and rounded, with a short snout and black tear-like facial streaks. It has a height of 67–94 cm (2.20–3.08 ft) at the shoulder, and the head-and-body length is between 1.1 and 1.5 m. Adults weigh between 21 and 65 kg.",
+   "iucn_status": {
+    "code": "VU",
+    "label": "Vulnerable",
+    "source": "IUCN Red List via Wikidata (P141)",
+    "source_url": "https://www.wikidata.org/wiki/Q23907"
+   },
+   "iucn_code": "VU",
+   "iucn_label": "Vulnerable",
+   "model_accuracy": 0.666667,
+   "test_images": 39,
+   "inaturalist_observations": 7793,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Male_cheetah_facing_left_in_South_Africa.jpg",
+    "width": 4181,
+    "height": 2787,
+    "artist": "AfricanConservation",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Male_cheetah_facing_left_in_South_Africa.jpg",
+    "provider": "Wikimedia Commons"
+   }
+  },
+  {
+   "number": 30,
+   "slug": "jaguar",
+   "label": "Jaguar",
+   "common_name": "Jaguar",
+   "scientific_name": "Panthera onca",
+   "rank": "species",
+   "is_group": false,
+   "animal_group": "Mammal",
+   "summary": "The jaguar is a large cat species and the only living member of the genus Panthera that is native to the Americas. Its coat features pale yellow to tan colored fur covered with spots that transition to rosettes on the sides; some individuals have a melanistic spotted coat. With a body length of up to 1.85 m and a weight of up to 158 kg (348 lb), it is the biggest cat species in the Americas and the third largest in the world. The jaguar's powerful bite allows it to pierce the carapaces of turtles and tortoises, and to employ an unusual killing method: it bites directly through the skull of mammalian prey between the ears to deliver a fatal blow to the brain.",
+   "iucn_status": {
+    "code": "NT",
+    "label": "Near Threatened",
+    "source": "IUCN Red List via Wikidata (P141)",
+    "source_url": "https://www.wikidata.org/wiki/Q35694"
+   },
+   "iucn_code": "NT",
+   "iucn_label": "Near Threatened",
+   "model_accuracy": 0.547619,
+   "test_images": 42,
+   "inaturalist_observations": 9198,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Standing_jaguar.jpg",
+    "width": 727,
+    "height": 501,
+    "artist": "USFWS",
+    "license": "Public domain",
+    "license_url": null,
+    "source_url": "https://commons.wikimedia.org/wiki/File:Standing_jaguar.jpg",
+    "provider": "Wikimedia Commons"
+   }
+  },
+  {
+   "number": 1,
+   "slug": "bear",
+   "label": "Bear",
+   "common_name": "Bear",
+   "scientific_name": "Ursidae",
+   "rank": "family",
+   "is_group": true,
+   "animal_group": "Mammal",
+   "summary": "Bears are carnivoran mammals of the family Ursidae. They are classified as caniforms within the suborder Caniformia. Although only eight species of bears are extant, they are widespread, appearing in a wide variety of habitats throughout most of the Northern Hemisphere and partially in the Southern Hemisphere. Bears are found on the continents of North America, South America, and Eurasia. Common characteristics of modern bears include large bodies with stocky legs, long snouts, small rounded ears, shaggy hair, plantigrade paws with five nonretractile claws, and short tails.",
+   "iucn_status": {
+    "code": null,
+    "label": "Not applicable (group)",
+    "source": null
+   },
+   "iucn_code": null,
+   "iucn_label": "Not applicable (group)",
+   "model_accuracy": 0.595238,
+   "test_images": 42,
+   "inaturalist_observations": 136722,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Ours_brun_parcanimalierpyrenees_1.jpg",
+    "width": 800,
+    "height": 600,
+    "artist": "Jean-noël Lafargue",
+    "license": "FAL",
+    "license_url": "http://artlibre.org/licence/lal/en",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ours_brun_parcanimalierpyrenees_1.jpg",
+    "provider": "Wikimedia Commons"
+   }
+  },
+  {
+   "number": 21,
+   "slug": "giraffe",
+   "label": "Giraffe",
+   "common_name": "Giraffe",
+   "scientific_name": "Giraffa camelopardalis",
+   "rank": "species",
+   "is_group": false,
+   "animal_group": "Mammal",
+   "summary": "Giraffes are large African hoofed mammals. They are the tallest living terrestrial animals and the largest ruminants on Earth. They are classified under the family Giraffidae, along with their closest extant relative, the okapi. Traditionally, giraffes have been thought of as one species, Giraffa camelopardalis, with nine subspecies. Most recently, researchers proposed dividing them into four extant species, with seven subspecies, which can be distinguished morphologically by their fur coat patterns. Six valid extinct species of Giraffa are known from the fossil record.",
+   "iucn_status": {
+    "code": "VU",
+    "label": "Vulnerable",
+    "source": "IUCN Red List via iNaturalist",
+    "source_url": "https://www.inaturalist.org/taxa/42157"
+   },
+   "iucn_code": "VU",
+   "iucn_label": "Vulnerable",
+   "model_accuracy": 0.967742,
+   "test_images": 31,
+   "inaturalist_observations": 3065,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Giraffe_Mikumi_National_Park.jpg",
+    "width": 1590,
+    "height": 2011,
+    "artist": "Muhammad Mahdi Karim Facebook",
+    "license": "GFDL 1.2",
+    "license_url": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Giraffe_Mikumi_National_Park.jpg",
+    "provider": "Wikimedia Commons"
+   }
+  },
+  {
+   "number": 53,
+   "slug": "raccoon",
+   "label": "Raccoon",
+   "common_name": "Raccoon",
+   "scientific_name": "Procyon lotor",
+   "rank": "species",
+   "is_group": false,
+   "animal_group": "Mammal",
+   "summary": "The raccoon, sometimes called the North American, northern or common raccoon to distinguish it from other species of raccoon, is a mammal native to North America. It is the largest of the procyonid family, having a body length of 40 to 70 cm, and a body weight of 5 to 26 kg. Its grayish coat mostly consists of dense underfur, which insulates it against cold weather. The animal's most distinctive features include its extremely dexterous front paws, its facial mask, and its ringed tail, which are common themes in the mythologies of the Indigenous peoples of the Americas surrounding the species. The raccoon is noted for its intelligence, and studies show that it can remember the solution to tasks for at least three years. It is usually nocturnal and omnivorous, eating about 40% invertebrates, 33% plants, and 27% vertebrates.",
+   "iucn_status": {
+    "code": "LC",
+    "label": "Least Concern",
+    "source": "IUCN Red List via Wikidata (P141)",
+    "source_url": "https://www.wikidata.org/wiki/Q121439"
+   },
+   "iucn_code": "LC",
+   "iucn_label": "Least Concern",
+   "model_accuracy": 0.915254,
+   "test_images": 59,
+   "inaturalist_observations": 207576,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Raccoon_in_Central_Park_%2835264%29.jpg",
+    "width": 3855,
+    "height": 3019,
+    "artist": "Rhododendrites",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Raccoon_in_Central_Park_(35264).jpg",
+    "provider": "Wikimedia Commons"
+   }
+  },
+  {
+   "number": 26,
+   "slug": "harbor-seal",
+   "label": "Harbor seal",
+   "common_name": "Harbor seal",
+   "scientific_name": "Phoca vitulina",
+   "rank": "species",
+   "is_group": false,
+   "animal_group": "Mammal",
+   "summary": "The harbor seal, also known as the common seal, is a true seal found along temperate and Arctic marine coastlines of the Northern Hemisphere. The most widely distributed species of pinniped, they are found in coastal waters of the northern Atlantic and Pacific oceans, Baltic and North seas.",
+   "iucn_status": {
+    "code": "LC",
+    "label": "Least Concern",
+    "source": "IUCN Red List via Wikidata (P141)",
+    "source_url": "https://www.wikidata.org/wiki/Q26913"
+   },
+   "iucn_code": "LC",
+   "iucn_label": "Least Concern",
+   "model_accuracy": 0.588235,
+   "test_images": 68,
+   "inaturalist_observations": 75887,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Common_seal_%28Phoca_vitulina%29_2.jpg",
+    "width": 4362,
+    "height": 2907,
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Common_seal_(Phoca_vitulina)_2.jpg",
+    "provider": "Wikimedia Commons"
+   }
+  }
+ ]
+}

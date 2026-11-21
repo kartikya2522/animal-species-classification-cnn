@@ -1,0 +1,13 @@
+node_modules/
+dist/
+*.tsbuildinfo
+coverage/
+# Playwright
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/
+screenshots/
+.env.local
+
+test-results/

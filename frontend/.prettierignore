@@ -1,0 +1,9 @@
+dist
+node_modules
+coverage
+playwright-report
+test-results
+src/fixtures/*.json
+package-lock.json
+src/lib/inference/__fixtures__/*.json
+src/lib/samples.json

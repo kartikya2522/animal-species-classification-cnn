@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="WildLens — identify an animal from a photo, see why the model decided, and explore the species."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F4F1EA" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0F1F17" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WildLens" />
+    <meta property="og:title" content="WildLens — see the animal, understand the model" />
+    <meta
+      property="og:description"
+      content="Identify an animal from a photo with a class-activation heatmap, explore 80 species and ask a grounded field guide."
+    />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="WildLens: See the animal. Understand the model. With a photograph of a red panda."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og-image.jpg" />
+    <title>WildLens</title>
+    <script>
+      // Apply the stored theme before first paint to avoid a flash.
+      ;(function () {
+        try {
+          var t = localStorage.getItem('wildlens-theme')
+          if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t)
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

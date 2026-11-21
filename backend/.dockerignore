@@ -1,0 +1,11 @@
+# Build context for backend/Dockerfile: only requirements.txt and app/ are needed.
+.venv/
+venv/
+tests/
+**/__pycache__/
+**/*.pyc
+.pytest_cache/
+.env
+.env.*
+*.md
+pytest.ini

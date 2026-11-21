@@ -1,0 +1,14 @@
+# Backend runtime + test deps. Pinned to versions with wheels for Python 3.9-3.12
+# (local venvs) and 3.11 (Docker image, Phase 6).
+fastapi==0.115.12
+uvicorn[standard]==0.34.0
+onnxruntime==1.19.2
+numpy==2.0.2
+pillow==11.3.0
+python-multipart==0.0.20
+pydantic==2.10.6
+pydantic-settings==2.7.1
+
+# tests
+httpx==0.28.1
+pytest==8.3.5

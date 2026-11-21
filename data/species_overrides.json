@@ -1,0 +1,609 @@
+{
+  "_doc": "Manual mapping from the 80 class labels (models/classes.json) to a representative Wikipedia article and taxon. 'taxon' is the name queried on iNaturalist (and GBIF unless 'gbif_name' is given; gbif_name null = no GBIF key). 'is_group' = the label is a group of species, not one species; groups, domestic forms and hybrids never get a species-level IUCN status. Optional pins: inat_taxon_id, gbif_taxon_key, image_file (Commons file name).",
+  "species": {
+    "Bear": {
+      "wikipedia_title": "Bear",
+      "taxon": "Ursidae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — represents family Ursidae (all eight bear species)"
+    },
+    "Brown bear": {
+      "wikipedia_title": "Brown bear",
+      "taxon": "Ursus arctos",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species"
+    },
+    "Bull": {
+      "wikipedia_title": "Bull",
+      "taxon": "Bos taurus",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "domestic — an adult male of domestic cattle (Bos taurus); taxon data is for Bos taurus",
+      "domestic": true
+    },
+    "Butterfly": {
+      "wikipedia_title": "Butterfly",
+      "taxon": "Papilionoidea",
+      "rank": "superfamily",
+      "is_group": true,
+      "rank_note": "group — represents butterflies, superfamily Papilionoidea (order Lepidoptera)",
+      "gbif_name": "Lepidoptera",
+      "gbif_note": "GBIF backbone has no superfamily rank; map uses order Lepidoptera (includes moths)"
+    },
+    "Camel": {
+      "wikipedia_title": "Camel",
+      "taxon": "Camelus",
+      "rank": "genus",
+      "is_group": true,
+      "rank_note": "group — represents genus Camelus (dromedary, Bactrian camel, wild Bactrian camel)",
+      "gbif_taxon_key": 2441236
+    },
+    "Canary": {
+      "wikipedia_title": "Domestic canary",
+      "taxon": "Serinus canaria",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "domestic — the domestic canary, a domesticated form of the Atlantic canary (Serinus canaria); taxon data is for the wild species",
+      "domestic": true
+    },
+    "Caterpillar": {
+      "wikipedia_title": "Caterpillar",
+      "taxon": "Lepidoptera",
+      "rank": "order",
+      "is_group": true,
+      "rank_note": "group — a larval stage, not a taxon; represents larvae of order Lepidoptera (butterflies and moths)",
+      "life_stage": "larva"
+    },
+    "Cattle": {
+      "wikipedia_title": "Cattle",
+      "taxon": "Bos taurus",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "domestic — domestic cattle (Bos taurus)",
+      "domestic": true
+    },
+    "Centipede": {
+      "wikipedia_title": "Centipede",
+      "taxon": "Chilopoda",
+      "rank": "class",
+      "is_group": true,
+      "rank_note": "group — represents class Chilopoda"
+    },
+    "Cheetah": {
+      "wikipedia_title": "Cheetah",
+      "taxon": "Acinonyx jubatus",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species"
+    },
+    "Chicken": {
+      "wikipedia_title": "Chicken",
+      "taxon": "Gallus gallus domesticus",
+      "rank": "subspecies",
+      "is_group": false,
+      "rank_note": "domestic — domestic chicken, a domesticated subspecies of the red junglefowl (Gallus gallus)",
+      "domestic": true
+    },
+    "Crab": {
+      "wikipedia_title": "Crab",
+      "taxon": "Brachyura",
+      "rank": "infraorder",
+      "is_group": true,
+      "rank_note": "group — represents true crabs, infraorder Brachyura"
+    },
+    "Crocodile": {
+      "wikipedia_title": "Crocodile",
+      "taxon": "Crocodylidae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — represents family Crocodylidae (true crocodiles)"
+    },
+    "Deer": {
+      "wikipedia_title": "Deer",
+      "taxon": "Cervidae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — represents family Cervidae"
+    },
+    "Duck": {
+      "wikipedia_title": "Duck",
+      "taxon": "Anatidae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — ducks are an informal (paraphyletic) group within family Anatidae, which also contains geese and swans"
+    },
+    "Eagle": {
+      "wikipedia_title": "Eagle",
+      "taxon": "Accipitridae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — eagles are an informal group of large raptors within family Accipitridae (not a single clade)"
+    },
+    "Elephant": {
+      "wikipedia_title": "Elephant",
+      "taxon": "Elephantidae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — represents family Elephantidae (African bush, African forest and Asian elephants)"
+    },
+    "Fish": {
+      "wikipedia_title": "Fish",
+      "taxon": "Actinopterygii",
+      "rank": "paraphyletic group",
+      "is_group": true,
+      "rank_note": "group — 'fish' is not a natural taxon; represented here by ray-finned fishes (Actinopterygii), which make up ~99% of fish species",
+      "gbif_name": null,
+      "gbif_note": "Actinopterygii is not a rank in the current GBIF backbone; no GBIF key"
+    },
+    "Fox": {
+      "wikipedia_title": "Fox",
+      "taxon": "Vulpes",
+      "rank": "genus",
+      "is_group": true,
+      "rank_note": "group — represents true foxes, genus Vulpes (several other canid genera are also called foxes)"
+    },
+    "Frog": {
+      "wikipedia_title": "Frog",
+      "taxon": "Anura",
+      "rank": "order",
+      "is_group": true,
+      "rank_note": "group — represents order Anura (frogs and toads)"
+    },
+    "Giraffe": {
+      "wikipedia_title": "Giraffe",
+      "taxon": "Giraffa camelopardalis",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species — IUCN assesses giraffes as one species, Giraffa camelopardalis (some authorities split it into four)"
+    },
+    "Goat": {
+      "wikipedia_title": "Goat",
+      "taxon": "Capra hircus",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "domestic — domestic goat (Capra hircus)",
+      "domestic": true
+    },
+    "Goldfish": {
+      "wikipedia_title": "Goldfish",
+      "taxon": "Carassius auratus",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "domestic — the goldfish is a domesticated fish; taxon data is for Carassius auratus, which also has wild populations",
+      "domestic": true
+    },
+    "Goose": {
+      "wikipedia_title": "Goose",
+      "taxon": "Anser",
+      "rank": "genus",
+      "is_group": true,
+      "rank_note": "group — true geese (genera Anser and Branta, tribe Anserini); data uses genus Anser (grey geese)"
+    },
+    "Hamster": {
+      "wikipedia_title": "Hamster",
+      "taxon": "Cricetinae",
+      "rank": "subfamily",
+      "is_group": true,
+      "rank_note": "group — represents subfamily Cricetinae",
+      "gbif_name": "Cricetidae",
+      "gbif_note": "GBIF backbone has no subfamily rank; map uses family Cricetidae (includes voles and New World mice)"
+    },
+    "Harbor seal": {
+      "wikipedia_title": "Harbor seal",
+      "taxon": "Phoca vitulina",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species"
+    },
+    "Hedgehog": {
+      "wikipedia_title": "Hedgehog",
+      "taxon": "Erinaceinae",
+      "rank": "subfamily",
+      "is_group": true,
+      "rank_note": "group — represents subfamily Erinaceinae",
+      "gbif_name": "Erinaceidae",
+      "gbif_note": "GBIF backbone has no subfamily rank; map uses family Erinaceidae (includes gymnures)"
+    },
+    "Hippopotamus": {
+      "wikipedia_title": "Hippopotamus",
+      "taxon": "Hippopotamus amphibius",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species — the common hippopotamus (the pygmy hippo is a separate genus)"
+    },
+    "Horse": {
+      "wikipedia_title": "Horse",
+      "taxon": "Equus caballus",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "domestic — domestic horse (Equus ferus caballus / Equus caballus)",
+      "domestic": true
+    },
+    "Jaguar": {
+      "wikipedia_title": "Jaguar",
+      "taxon": "Panthera onca",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species"
+    },
+    "Jellyfish": {
+      "wikipedia_title": "Jellyfish",
+      "taxon": "Scyphozoa",
+      "rank": "class",
+      "is_group": true,
+      "rank_note": "group — 'jellyfish' covers medusae of several cnidarian classes; represented by class Scyphozoa (true jellyfish)"
+    },
+    "Kangaroo": {
+      "wikipedia_title": "Kangaroo",
+      "taxon": "Macropodidae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — kangaroos are the largest members of family Macropodidae (genera Macropus and Osphranter); data uses the whole family"
+    },
+    "Koala": {
+      "wikipedia_title": "Koala",
+      "taxon": "Phascolarctos cinereus",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species"
+    },
+    "Ladybug": {
+      "wikipedia_title": "Coccinellidae",
+      "taxon": "Coccinellidae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — represents family Coccinellidae (ladybirds / lady beetles)",
+      "common_name": "Ladybug"
+    },
+    "Leopard": {
+      "wikipedia_title": "Leopard",
+      "taxon": "Panthera pardus",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species"
+    },
+    "Lion": {
+      "wikipedia_title": "Lion",
+      "taxon": "Panthera leo",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species"
+    },
+    "Lizard": {
+      "wikipedia_title": "Lizard",
+      "taxon": "Sauria",
+      "rank": "suborder",
+      "is_group": true,
+      "rank_note": "group — lizards are a paraphyletic group of squamates; iNaturalist groups them as suborder Sauria",
+      "gbif_name": "Squamata",
+      "gbif_note": "GBIF backbone has no lizard taxon; map uses Squamata (includes snakes)"
+    },
+    "Lynx": {
+      "wikipedia_title": "Lynx",
+      "taxon": "Lynx",
+      "rank": "genus",
+      "is_group": true,
+      "rank_note": "group — represents genus Lynx (four species)"
+    },
+    "Magpie": {
+      "wikipedia_title": "Magpie",
+      "taxon": "Pica",
+      "rank": "genus",
+      "is_group": true,
+      "rank_note": "group — 'magpie' covers several corvid genera; represented by genus Pica (incl. the Eurasian magpie)"
+    },
+    "Monkey": {
+      "wikipedia_title": "Monkey",
+      "taxon": "Simiiformes",
+      "rank": "infraorder",
+      "is_group": true,
+      "rank_note": "group — monkeys are a paraphyletic group (Simiiformes excluding apes); data uses infraorder Simiiformes, which includes apes",
+      "gbif_name": "Primates",
+      "gbif_note": "GBIF backbone has no infraorder rank; map uses order Primates"
+    },
+    "Moths and butterflies": {
+      "wikipedia_title": "Lepidoptera",
+      "taxon": "Lepidoptera",
+      "rank": "order",
+      "is_group": true,
+      "rank_note": "group — represents order Lepidoptera",
+      "common_name": "Moths and butterflies"
+    },
+    "Mouse": {
+      "wikipedia_title": "Mouse",
+      "taxon": "Mus",
+      "rank": "genus",
+      "is_group": true,
+      "rank_note": "group — 'mouse' covers many small rodents; represented by genus Mus (incl. the house mouse)",
+      "inat_taxon_id": 44678
+    },
+    "Mule": {
+      "wikipedia_title": "Mule",
+      "taxon": "Equus asinus × caballus",
+      "rank": "hybrid",
+      "is_group": false,
+      "rank_note": "hybrid — offspring of a male donkey and a female horse; not a species",
+      "hybrid": true,
+      "gbif_name": null,
+      "gbif_note": "hybrids have no GBIF backbone key"
+    },
+    "Ostrich": {
+      "wikipedia_title": "Common ostrich",
+      "taxon": "Struthio camelus",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species — the common ostrich (the Somali ostrich is a separate species)",
+      "common_name": "Ostrich"
+    },
+    "Otter": {
+      "wikipedia_title": "Otter",
+      "taxon": "Lutrinae",
+      "rank": "subfamily",
+      "is_group": true,
+      "rank_note": "group — represents subfamily Lutrinae",
+      "gbif_name": "Mustelidae",
+      "gbif_note": "GBIF backbone has no subfamily rank; map uses family Mustelidae (includes weasels, badgers)"
+    },
+    "Owl": {
+      "wikipedia_title": "Owl",
+      "taxon": "Strigiformes",
+      "rank": "order",
+      "is_group": true,
+      "rank_note": "group — represents order Strigiformes"
+    },
+    "Panda": {
+      "wikipedia_title": "Giant panda",
+      "taxon": "Ailuropoda melanoleuca",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species — mapped to the giant panda (the red panda is a separate class label)",
+      "common_name": "Giant panda"
+    },
+    "Parrot": {
+      "wikipedia_title": "Parrot",
+      "taxon": "Psittaciformes",
+      "rank": "order",
+      "is_group": true,
+      "rank_note": "group — represents order Psittaciformes"
+    },
+    "Penguin": {
+      "wikipedia_title": "Penguin",
+      "taxon": "Spheniscidae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — represents family Spheniscidae"
+    },
+    "Pig": {
+      "wikipedia_title": "Pig",
+      "taxon": "Sus scrofa domesticus",
+      "rank": "subspecies",
+      "is_group": false,
+      "rank_note": "domestic — domestic pig, a domesticated form of the wild boar (Sus scrofa)",
+      "domestic": true
+    },
+    "Polar bear": {
+      "wikipedia_title": "Polar bear",
+      "taxon": "Ursus maritimus",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species"
+    },
+    "Rabbit": {
+      "wikipedia_title": "Rabbit",
+      "taxon": "Leporidae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — rabbits are the non-hare members of family Leporidae; data uses the whole family (incl. hares)"
+    },
+    "Raccoon": {
+      "wikipedia_title": "Raccoon",
+      "taxon": "Procyon lotor",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species — the common raccoon"
+    },
+    "Raven": {
+      "wikipedia_title": "Common raven",
+      "taxon": "Corvus corax",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species — 'raven' is used for several Corvus species; mapped to the common raven, the most widespread"
+    },
+    "Red panda": {
+      "wikipedia_title": "Red panda",
+      "taxon": "Ailurus fulgens",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species"
+    },
+    "Rhinoceros": {
+      "wikipedia_title": "Rhinoceros",
+      "taxon": "Rhinocerotidae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — represents family Rhinocerotidae (five living species)"
+    },
+    "Scorpion": {
+      "wikipedia_title": "Scorpion",
+      "taxon": "Scorpiones",
+      "rank": "order",
+      "is_group": true,
+      "rank_note": "group — represents order Scorpiones"
+    },
+    "Sea lion": {
+      "wikipedia_title": "Sea lion",
+      "taxon": "Otariidae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — sea lions are part of family Otariidae (eared seals, which also includes fur seals)"
+    },
+    "Sea turtle": {
+      "wikipedia_title": "Sea turtle",
+      "taxon": "Chelonioidea",
+      "rank": "superfamily",
+      "is_group": true,
+      "rank_note": "group — represents superfamily Chelonioidea (seven living species)",
+      "gbif_name": "Cheloniidae",
+      "gbif_note": "GBIF backbone has no superfamily rank; map uses family Cheloniidae (all sea turtles except the leatherback)"
+    },
+    "Seahorse": {
+      "wikipedia_title": "Seahorse",
+      "taxon": "Hippocampus",
+      "rank": "genus",
+      "is_group": true,
+      "rank_note": "group — represents genus Hippocampus"
+    },
+    "Shark": {
+      "wikipedia_title": "Shark",
+      "taxon": "Selachii",
+      "rank": "infraclass",
+      "is_group": true,
+      "rank_note": "group — represents sharks (Selachimorpha; iNaturalist infraclass Selachii)",
+      "gbif_name": "Elasmobranchii",
+      "gbif_note": "GBIF backbone has no shark-only taxon; map uses class Elasmobranchii (includes rays)"
+    },
+    "Sheep": {
+      "wikipedia_title": "Sheep",
+      "taxon": "Ovis aries",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "domestic — domestic sheep (Ovis aries)",
+      "domestic": true
+    },
+    "Shrimp": {
+      "wikipedia_title": "Shrimp",
+      "taxon": "Caridea",
+      "rank": "infraorder",
+      "is_group": true,
+      "rank_note": "group — 'shrimp' is not a single taxon; represented by caridean shrimp (infraorder Caridea)",
+      "gbif_name": "Decapoda",
+      "gbif_note": "GBIF backbone has no infraorder rank; map uses order Decapoda (includes crabs, lobsters)"
+    },
+    "Snail": {
+      "wikipedia_title": "Snail",
+      "taxon": "Gastropoda",
+      "rank": "class",
+      "is_group": true,
+      "rank_note": "group — 'snail' covers shelled members of class Gastropoda"
+    },
+    "Snake": {
+      "wikipedia_title": "Snake",
+      "taxon": "Serpentes",
+      "rank": "suborder",
+      "is_group": true,
+      "rank_note": "group — represents suborder Serpentes"
+    },
+    "Sparrow": {
+      "wikipedia_title": "Old World sparrow",
+      "taxon": "Passeridae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — represents Old World sparrows, family Passeridae (American sparrows are a separate family)",
+      "common_name": "Sparrow"
+    },
+    "Spider": {
+      "wikipedia_title": "Spider",
+      "taxon": "Araneae",
+      "rank": "order",
+      "is_group": true,
+      "rank_note": "group — represents order Araneae"
+    },
+    "Squid": {
+      "wikipedia_title": "Squid",
+      "taxon": "Decapodiformes",
+      "rank": "superorder",
+      "is_group": true,
+      "rank_note": "group — represents superorder Decapodiformes (squid and cuttlefish relatives)",
+      "gbif_name": "Cephalopoda",
+      "gbif_note": "GBIF backbone has no Decapodiformes/Teuthida taxon; map uses class Cephalopoda (includes octopuses, cuttlefish, nautiluses)"
+    },
+    "Squirrel": {
+      "wikipedia_title": "Squirrel",
+      "taxon": "Sciuridae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — represents family Sciuridae"
+    },
+    "Starfish": {
+      "wikipedia_title": "Starfish",
+      "taxon": "Asteroidea",
+      "rank": "class",
+      "is_group": true,
+      "rank_note": "group — represents class Asteroidea"
+    },
+    "Swan": {
+      "wikipedia_title": "Swan",
+      "taxon": "Cygnus",
+      "rank": "genus",
+      "is_group": true,
+      "rank_note": "group — represents genus Cygnus"
+    },
+    "Tick": {
+      "wikipedia_title": "Tick",
+      "taxon": "Ixodida",
+      "rank": "order",
+      "is_group": true,
+      "rank_note": "group — represents order Ixodida"
+    },
+    "Tiger": {
+      "wikipedia_title": "Tiger",
+      "taxon": "Panthera tigris",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species"
+    },
+    "Tortoise": {
+      "wikipedia_title": "Tortoise",
+      "taxon": "Testudinidae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — represents family Testudinidae"
+    },
+    "Turkey": {
+      "wikipedia_title": "Wild turkey",
+      "taxon": "Meleagris gallopavo",
+      "rank": "species",
+      "is_group": false,
+      "rank_note": "species — the wild turkey, Meleagris gallopavo; the domestic turkey is a domesticated form of the same species",
+      "common_name": "Turkey"
+    },
+    "Turtle": {
+      "wikipedia_title": "Turtle",
+      "taxon": "Testudines",
+      "rank": "order",
+      "is_group": true,
+      "rank_note": "group — represents order Testudines (all turtles and tortoises)"
+    },
+    "Whale": {
+      "wikipedia_title": "Whale",
+      "taxon": "Cetacea",
+      "rank": "infraorder",
+      "is_group": true,
+      "rank_note": "group — 'whale' is informal; represented by Cetacea (which also includes dolphins and porpoises)"
+    },
+    "Woodpecker": {
+      "wikipedia_title": "Woodpecker",
+      "taxon": "Picidae",
+      "rank": "family",
+      "is_group": true,
+      "rank_note": "group — represents family Picidae"
+    },
+    "Worm": {
+      "wikipedia_title": "Earthworm",
+      "taxon": "Crassiclitellata",
+      "rank": "order",
+      "is_group": true,
+      "rank_note": "group — 'worm' is not a taxon; represented by earthworms (order Crassiclitellata, phylum Annelida)"
+    },
+    "Zebra": {
+      "wikipedia_title": "Zebra",
+      "taxon": "Equus quagga",
+      "rank": "subgenus",
+      "is_group": true,
+      "rank_note": "group — three zebra species (subgenus Hippotigris of Equus); map and observations use the plains zebra (Equus quagga) as the representative species",
+      "scientific_name": "Equus (Hippotigris)"
+    }
+  }
+}

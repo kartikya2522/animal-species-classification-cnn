@@ -1,7 +1,7 @@
 """
 Evaluation script for the ResNet50 baseline — Animal-80.
 
-Loads the best validation checkpoint (outputs/checkpoints/resnet50_best.pt),
+Loads the best validation checkpoint (outputs/models/resnet50_best.pt),
 runs inference on the TEST split, and produces the six required outputs:
 
   1. Macro Precision, Recall, F1-score

@@ -1,0 +1,10 @@
+# Phase 0 (model export + parity tests). Not needed at runtime by the backend.
+torch>=2.2
+torchvision>=0.17
+onnx>=1.16
+onnxruntime>=1.18
+onnxscript>=0.1    # required by newer torch.onnx even with dynamo=False on some versions
+numpy
+pandas
+pillow
+pytest

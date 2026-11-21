@@ -1,0 +1,67 @@
+{
+  "default": "efficientnetv2_s",
+  "models": [
+    {
+      "id": "efficientnetv2_s",
+      "display_name": "EfficientNetV2-S",
+      "architecture": "torchvision efficientnet_v2_s, classifier = Dropout + Linear(1280, 80)",
+      "onnx": "models/efficientnetv2_s.onnx",
+      "variants": {
+        "fp32": {
+          "onnx": "models/efficientnetv2_s.onnx",
+          "usable": true,
+          "download_url": "",
+          "sha256": "668718eb84b3d72aef87f74f3ee86b65e22a1f7a0d94fd2a86207c5b416750d5"
+        },
+        "fp16": {
+          "onnx": "models/efficientnetv2_s.fp16.onnx",
+          "usable": true,
+          "note": "float16 weights/activations, float32 inputs/outputs (Cast at the boundary); usable only if test-set top-1 agreement with fp32 >= 99% (see eval file)",
+          "download_url": "",
+          "sha256": "e4f6913ae9b234765f7f3193792d4f9987745bd64afd3616d79d18faa5c5dc67",
+          "top1_agreement_with_fp32": 0.9989440337909187
+        }
+      },
+      "inputs": {
+        "name": "input",
+        "layout": "NCHW",
+        "dtype": "float32"
+      },
+      "outputs": {
+        "logits": "N x 80",
+        "features": "N x 1280 x 7 x 7 (features)"
+      },
+      "classes": "models/classes.json",
+      "num_classes": 80,
+      "fc": {
+        "npz": "models/efficientnetv2_s_fc.npz",
+        "json": "models/efficientnetv2_s_fc.json"
+      },
+      "input_size": [
+        224,
+        224
+      ],
+      "resize": "bilinear, direct to 224x224 (no crop, aspect not preserved)",
+      "scale": "pixel / 255",
+      "mean": [
+        0.46290031,
+        0.44127762,
+        0.38908589
+      ],
+      "std": [
+        0.26581346,
+        0.2520165,
+        0.25977104
+      ],
+      "metrics": {
+        "results": "outputs/results/efficientnetv2_s_metrics.json",
+        "evaluation": "outputs/results/efficientnetv2_s_evaluation.json",
+        "onnx_eval": "models/efficientnetv2_s_onnx_eval.json"
+      },
+      "cam": {
+        "layer": "features (last conv block, after the final 1x1 conv-BN-SiLU)",
+        "method": "CAM == Grad-CAM for GAP->Linear head (dropout is identity at eval): heatmap_c = ReLU(sum_k W_fc[c,k] * features[k]); upsample 7x7 -> 224x224, normalize to [0,1]"
+      }
+    }
+  ]
+}

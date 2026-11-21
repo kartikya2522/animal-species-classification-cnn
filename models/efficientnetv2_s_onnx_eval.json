@@ -1,0 +1,26 @@
+{
+  "split": "test",
+  "n_images": 7576,
+  "preprocessing": "scripts/preprocessing.py",
+  "reported_test_accuracy": 0.8321,
+  "fp32": {
+    "onnx": "models/efficientnetv2_s.onnx",
+    "top1_accuracy": 0.8321013727560718,
+    "top5_accuracy": 0.984688489968321,
+    "abs_diff_vs_reported": 1.3727560718157505e-06,
+    "matches_reported": true,
+    "eval_seconds": 292.4
+  },
+  "fp16": {
+    "onnx": "models/efficientnetv2_s.fp16.onnx",
+    "size_mb": 40.6,
+    "top1_accuracy": 0.832233368532207,
+    "top5_accuracy": 0.984688489968321,
+    "top1_agreement_with_fp32": 0.9989440337909187,
+    "top5_set_agreement_with_fp32": 0.996832101372756,
+    "max_abs_prob_diff_vs_fp32": 0.012989252805709839,
+    "agreement_threshold": 0.99,
+    "usable": true,
+    "eval_seconds": 282.2
+  }
+}

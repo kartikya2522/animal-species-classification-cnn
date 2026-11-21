@@ -18,3 +18,14 @@ outputs/logs/
 .DS_Store
 Thumbs.db
 *.log
+# Phase 0 model artifacts (large; hosted externally, see scripts/download_models.sh)
+models/*.onnx
+# Backend (Phase 1)
+backend/.venv/
+.pytest_cache/
+# Phase 2: species KB raw HTTP cache, backend secrets
+data/.kb_cache/
+backend/.env
+# Phase 4: offline species photo cache
+data/species_images/
+frontend/test-results/

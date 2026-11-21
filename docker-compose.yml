@@ -1,0 +1,54 @@
+# WildLens local stack:  docker compose up --build   →  http://localhost:8080
+#
+#   backend   FastAPI + ONNX Runtime (CPU), also on http://127.0.0.1:8000/docs
+#   frontend  nginx serving the production build; proxies /api to the backend
+#
+# Nothing large is baked into the images. The model weights (models/*.onnx, not published),
+# metrics, figures, the species knowledge base and the optional offline photo cache are
+# bind-mounted read-only from this checkout, and secrets come from the optional backend/.env.
+
+name: wildlens
+
+services:
+  backend:
+    build:
+      context: ./backend
+    image: wildlens-backend:local
+    env_file:
+      - path: ./backend/.env       # optional: WILDLENS_GROQ_API_KEY etc. (see backend/.env.example)
+        required: false
+    environment:
+      # Same origin through nginx, so CORS only matters for direct calls to :8000.
+      WILDLENS_CORS_ORIGINS: ${WILDLENS_CORS_ORIGINS:-http://localhost:8080,http://127.0.0.1:8080}
+    volumes:
+      - ./models:/srv/models:ro
+      - ./outputs/results:/srv/outputs/results:ro
+      - ./outputs/figures:/srv/outputs/figures:ro
+      - ./data/species_kb.json:/srv/data/species_kb.json:ro
+      # Optional offline photo cache (make cache-images). If it does not exist, Docker creates an
+      # empty directory and the site falls back to Wikimedia Commons thumbnails.
+      - ./data/species_images:/srv/data/species_images:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # lets WILDLENS_OLLAMA_URL reach an Ollama on the host
+    read_only: true
+    tmpfs:
+      - /tmp
+    ports:
+      - "127.0.0.1:${WILDLENS_API_PORT:-8000}:8000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        VITE_INFERENCE_MODE: ${VITE_INFERENCE_MODE:-server}   # or "browser" (model runs in the page)
+    image: wildlens-frontend:local
+    volumes:
+      - ./models:/srv/models:ro        # served at /models/*.onnx for browser mode
+    ports:
+      - "127.0.0.1:${WILDLENS_HTTP_PORT:-8080}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped

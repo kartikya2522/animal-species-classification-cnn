@@ -1,0 +1,15 @@
+# Root build context, used by frontend/Dockerfile. Allow-list: only the frontend sources and the
+# small committed model metadata the browser build imports. Never ONNX weights, venvs, data or .git.
+*
+!frontend/
+!models/registry.json
+!models/classes.json
+!models/efficientnetv2_s_fc.json
+
+frontend/node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+frontend/.vite/
+frontend/**/*.log
+frontend/.env*

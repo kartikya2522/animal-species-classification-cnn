@@ -1,10 +1,13 @@
 ﻿# WildLens: animal species classification with CNN architectures
 
+**Live demo:** https://wildlens-web.vercel.app
+
+> The backend runs on a free tier and sleeps when idle, so the first request after a quiet spell can take a minute or two.
+
 **WildLens** is a web platform built on a comparative study of four image classifiers trained on the
 Animal-80 dataset. Upload a photograph and the study's best model, EfficientNetV2-S, returns its five most likely classes with a class-activation heatmap showing which regions informed the decision. A species atlas covers
 all 80 classes with conservation status and GBIF occurrence maps, a Field Guide answers questions
-about any animal with cited sources, and a Research section presents the full model comparison. Everything
-runs locally on a laptop at no cost; only the chat's live lookups and map tiles need a network.
+about any animal with cited sources, and a Research section presents the full model comparison. It runs locally on a laptop at no cost (only the chat's live lookups and map tiles need a network) and is also deployed free on Render and Vercel.
 
 ![Home page](docs/platform/screenshots/home.jpg)
 
@@ -85,17 +88,15 @@ Open **<http://localhost:5173>**. Run `make help` for all targets.
 
 ### Models
 
-The trained weights are **not published**: the team demos the platform on its own laptops. The
-small model metadata (`registry.json`, `classes.json`, the classifier weights used for heatmaps) is
-committed; the ONNX files are gitignored:
+The FP32 ONNX model is published as a [GitHub Release](https://github.com/kartikya2522/animal-species-classification-cnn/releases/tag/model-v1) (`efficientnetv2_s.onnx`; its SHA-256 is in `models/registry.json`). The FP16 browser variant and the PyTorch checkpoint are not published. The small model metadata (`registry.json`, `classes.json`, the classifier weights used for heatmaps) is committed; the ONNX files are gitignored:
 
 | File | Size | Used by |
 |---|---|---|
 | `models/efficientnetv2_s.onnx` | 81 MB | backend (server mode) |
 | `models/efficientnetv2_s.fp16.onnx` | 41 MB | browser mode (99.89% top-1 agreement with FP32) |
 
-To get them, either copy both files from a teammate into `models/`, or export them from the
-training checkpoint (`outputs\models\efficientnetv2_s.pth`, also not in git) with
+To get them, either download the FP32 file from the Release into `models/`, or export them from the
+training checkpoint (`outputs/models/efficientnetv2_s.pth`, also not in git) with
 `venv/bin/python scripts/export_onnx.py --fp16` (see `scripts/download_models.sh --help`). Then run:
 
 ```bash
@@ -124,12 +125,18 @@ With `make dev`, Vite serves the app and proxies `/api` instead of nginx. The he
 activation map computed from the network's last convolutional features and classifier weights; for
 EfficientNetV2-S's pooling-plus-linear head (dropout is inactive at inference) it is mathematically identical to Grad-CAM, so no gradients are needed at runtime. Details: [`backend/README.md`](backend/README.md) (API, configuration, chat design), [`frontend/README.md`](frontend/README.md) (pages, inference modes, design tokens).
 
+## Deployment
+
+- **Backend:** Render (Docker, free tier), built from `deploy/render/Dockerfile`. It clones this repo and downloads the model from the Release, verifying the SHA-256.
+- **Frontend:** Vercel, root directory `frontend`, with `VITE_API_BASE` pointing at the Render URL. The deployed build uses server mode.
+- **Secrets:** `WILDLENS_GROQ_API_KEY` and `WILDLENS_CORS_ORIGINS` are Render environment variables, never committed.
+
 ## Project structure
 
 ```
 ├── backend/                  FastAPI service (ONNX Runtime, CAM, species KB, grounded chat) + Dockerfile
-├── frontend/                 React + Vite app, nginx config + Dockerfile, Playwright e2e tests
-├── models/                   registry.json, classes, efficientnetv2_s_fc.* (committed); *.onnx (not published)
+├── frontend/                 React + Vite app, nginx config + Dockerfile, vercel.json, Playwright e2e tests
+├── models/                   registry.json, classes, efficientnetv2_s_fc.* (committed); *.onnx (FP32 on the GitHub Release)
 ├── data/
 │   ├── manifest.csv          master index of the processed crops: filepath, label, split
 │   ├── species_kb.json       species knowledge base (built by scripts/build_species_kb.py)
@@ -145,6 +152,7 @@ EfficientNetV2-S's pooling-plus-linear head (dropout is inactive at inference) i
 ├── scripts/                  ONNX export/evaluation, per-class evaluation (evaluate_per_class.py), KB and photo-cache builders, dev helpers
 ├── src/                      the ML study: preprocessing, training scripts, shared utils
 ├── tests/phase0/             ONNX parity tests (PyTorch vs ONNX, preprocessing, CAM)
+├── deploy/render/            Dockerfile for the Render backend (clones this repo, downloads the model from the Release)
 ├── docker-compose.yml, Makefile
 └── requirements.txt          ML study dependencies
 ```
@@ -219,7 +227,7 @@ All four models were trained under an identical configuration to ensure a fair c
 
 ConvNeXt-Tiny's AUC is shown as "—" because its training run did not compute it.
 
-**EfficientNetV2-S was the best-performing and most computationally efficient model overall** — highest accuracy, F1, and AUC, with the fewest parameters and fastest training/inference time. Full analysis, per-class breakdowns, and discussion in `docs/model_comparison.md`.
+**EfficientNetV2-S was the best-performing model overall**, with the highest accuracy, F1 and AUC (among the models with an AUC), the fewest parameters and the shortest training time. Full analysis, per-class breakdowns, and discussion in `docs/model_comparison.md`.
 
 ## Study repository structure
 
@@ -256,10 +264,10 @@ The processed image dataset (`data/processed/`) is not tracked in this repositor
 
 ## Key Findings
 
-- **EfficientNetV2-S dominates on every metric** measured — no accuracy-vs-efficiency trade-off was observed; the best model was also the fastest and smallest.
+- **EfficientNetV2-S leads on every metric measured for all four models** (accuracy, precision, recall, F1) and on AUC among the three models that have one. No accuracy-vs-efficiency trade-off was observed: it also has the fewest parameters and the shortest training time.
 - **ConvNeXt-Tiny (Modern CNN) improved over the ResNet50 baseline** on both accuracy and F1-score, consistent with expectations for a more modern CNN design.
 - **Swin-Tiny (Transformer) did not meaningfully improve over the baseline** (79.61% vs 79.92% accuracy). A possible explanation is the limited training data and epoch budget, since vision transformers typically need more data to outperform CNNs. This was not tested here.
-- **All four models struggled on the same handful of classes** (the write-up names Bear, Turtle and Squid). That is consistent with data quality, class imbalance or visually similar classes, but these experiments do not isolate which. In the per-class results, Squid and Turtle score lowest, while Bear sits mid-table (about 57–60%).
+- **All four models struggled on the same handful of classes** (the write-up names Bear, Turtle and Squid). That is consistent with data quality, class imbalance or visually similar classes, but these experiments do not isolate which. In the per-class results, Squid and Turtle score 0% for EfficientNetV2-S, while Bear sits mid-table at 59.5% for both EfficientNetV2-S and ResNet50.
 - **EfficientNetV2-S overfit under the fixed 12-epoch recipe.** Its validation accuracy peaked at epoch 2
   (89.2%) and then declined to about 87.9% while training accuracy kept rising to about 95.9%, so the
   evaluated checkpoint is the epoch-2 one. With no learning-rate schedule and one run per model, this
